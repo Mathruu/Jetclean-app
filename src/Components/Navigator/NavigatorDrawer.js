@@ -10,7 +10,7 @@ const NavigatorDrawer = () => {
 
     return (
 
-        <drawer.Navigator>
+        <drawer.Navigator screenOptions={{ headerTintColor: '#120a8f', drawerActiveTintColor: '#120a8f',}}>
             <drawer.Screen name="home" component={HomeView}
                         options={
                             {

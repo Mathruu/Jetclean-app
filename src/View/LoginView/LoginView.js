@@ -1,8 +1,13 @@
 import { View, StyleSheet, ImageBackground, Image, Button, ScrollView } from "react-native";
 import { Text, TextInput } from "react-native-paper";
+import { useState } from "react";
 
 
 const LoginView = ({ navigation }) => {
+
+    const [form , setForm] = useState({login:'123', senha:'123'})
+
+
     return (
 
         <ScrollView
@@ -22,14 +27,16 @@ const LoginView = ({ navigation }) => {
                         <TextInput
                             label="Email"
                             // value={text}
-                            onChangeText={text => setText(text)}
+                            onChangeText={text => setForm(text)}
                         />
                     </View>
                     <View style={Styles.inputContainer}>
                         <TextInput
                             label="Senha"
                             // value={text}
-                            onChangeText={text => setText(text)}
+                            onChangeText={text => setForm(text)}
+                            secureTextEntry
+                            right={<TextInput.Icon icon="eye" size={15} />}
                         />
                     </View>
                     <View style={Styles.btn}>
